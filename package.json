@@ -1,0 +1,35 @@
+{
+  "name": "impost",
+  "version": "1.0.0",
+  "description": "Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/unit/**/*spec.ts || true",
+    "start": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturkasperek/impost.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arturkasperek/impost/issues"
+  },
+  "homepage": "https://github.com/arturkasperek/impost#readme",
+  "dependencies": {
+    "@types/node": "^8.0.30",
+    "lodash": "^4.17.4",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/lodash": "^4.14.74",
+    "@types/mocha": "^2.2.43",
+    "@types/mongodb": "^2.2.11",
+    "@types/mongoose": "^4.7.23",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
+  }
+}
