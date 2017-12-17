@@ -10,11 +10,11 @@ describe('User', () => {
 		app = new Impost();
 	});
 
-	it('should be able to register empty schema', () => {
+	it('should be able to register empty fieldsSchema', () => {
 		const User = new Collection('user', {});
 		expect(User.getName()).to.equal('user');
 	});
-	it('should be able to create schema with fields', () => {
+	it('should be able to create fieldsSchema with fields', () => {
 		const User = new Collection('user', {
 			name: {
 				type: TEXT_FIELD,

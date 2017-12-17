@@ -1,5 +1,8 @@
+import {Router} from "express";
+
 export interface IField {
 	type: string,
+	name: string,
 	fields?: Schema[],
 	options?: Object
 }
@@ -32,4 +35,25 @@ export interface IField {
 
 export interface Schema {
 	[name: string]: IField
+}
+
+export interface Collection {
+	name: string;
+	fieldsSchema: IField[];
+}
+
+export interface CollectionSchema extends Collection {
+	accessList?: string[];
+}
+
+export interface CollectionResolved extends Collection{
+	endpoint: string;
+}
+
+export interface UISettings {
+	collections: CollectionResolved[];
+}
+
+export interface ImpostSettings {
+	collections: CollectionSchema[];
 }

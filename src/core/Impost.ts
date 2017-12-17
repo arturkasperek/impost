@@ -1,27 +1,48 @@
 import {Collection} from "./Collection";
+import * as express from 'express';
+import * as http from "http";
+import { NestFactory } from '@nestjs/core';
+import {MainModule} from "./modules/Main/MainModule";
+import {ImpostSettings} from "../interfaces/interfaces";
+import ImpostSettingsService from "./ImpostSettingsService";
 
 export default class Impost {
-	private collections: Collection[] = [];
+	// private collections: CollectionSchema[] = [];
+	// public expressApp: express.Application;
+	// private server: http.Server;
 	// private field:
 
-	constructor() {
-
+	constructor( settings: ImpostSettings ) {
+		ImpostSettingsService.setSettings(settings);
 	}
 
-	validate(collectionToRegister: Collection) {
-		this.collections.forEach((collection) => {
-			if ( collectionToRegister.getName() === collection.getName() ) {
-				throw new Error(`We can't register collection with ${collectionToRegister.getName()} cause name is not unique`);
-			}
-		})
+	public getMainModule(): MainModule {
+		return MainModule;
 	}
 
-	registerCollection(collection: Collection) {
-		this.validate(collection);
-		this.collections.push(collection);
+	private loadImpostAPIs() {
 	}
 
-	getCollections(): Collection[] {
-		return this.getCollections();
+	public async start(): Promise<any> {
+		const app = await NestFactory.create(this.getMainModule());
+
+		return app.listen(3000);
 	}
+
+	// validate(collectionToRegister: CollectionSchema) {
+	// 	this.collections.forEach((collection) => {
+	// 		if ( collectionToRegister.getName() === collection.getName() ) {
+	// 			throw new Error(`We can't register collection with ${collectionToRegister.getName()} cause name is not unique`);
+	// 		}
+	// 	})
+	// }
+	//
+	// registerCollection(collection: CollectionSchema) {
+	// 	this.validate(collection);
+	// 	this.collections.push(collection);
+	// }
+	//
+	// getCollections(): CollectionSchema[] {
+	// 	return this.getCollections();
+	// }
 }
