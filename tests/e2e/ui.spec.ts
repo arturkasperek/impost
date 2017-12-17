@@ -86,7 +86,7 @@ describe('User', () => {
 			});
 	});
 
-	it('should set fieldsSchema with permissions and get only collections which he have writes', async () => {
+	it('should set fieldsSchema with permissions and get only collections which he has writes', async () => {
 		await initAppWithSettings(server, {
 			collections: [catCollection, {
 				...userCollection,
