@@ -14,10 +14,12 @@ describe('Mapper to Mongoose', () => {
 		const mongoSchema = {
 			name: {type: String },
 			age: { type: Number },
-			password: { type: Number },
+			password: { type: String },
 			description: { type: Number },
 		};
 
 		expect(mongoSchema).to.deep.equal(toMongooseSchema(schema));
 	});
+
+	it('should be able to ')
 });

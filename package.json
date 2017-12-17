@@ -1,6 +1,6 @@
 {
   "name": "impost",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,10 @@
   "homepage": "https://github.com/arturkasperek/impost#readme",
   "dependencies": {
     "@types/node": "^8.0.30",
+    "@types/react": "^16.0.22",
     "lodash": "^4.17.4",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
     "ts-node": "^3.3.0",
     "typescript": "^2.5.2"
   },
