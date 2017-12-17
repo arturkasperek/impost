@@ -2,7 +2,7 @@ import {Collection} from "./Collection";
 
 export default class Impost {
 	private collections: Collection[] = [];
-	private field:
+	// private field:
 
 	constructor() {
 

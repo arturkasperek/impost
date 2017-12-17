@@ -4,7 +4,7 @@
   "description": "Test",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register tests/unit/**/*spec.ts || true",
+    "test": "mocha -r ts-node/register tests/unit/**/*spec.ts",
     "start": "ts-node src/index.ts"
   },
   "repository": {
