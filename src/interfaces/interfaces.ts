@@ -3,7 +3,7 @@ import {Router} from "express";
 export interface IField {
 	type: string,
 	name: string,
-	fields?: Schema[],
+	fields?: IField[],
 	options?: Object
 }
 
@@ -41,6 +41,8 @@ export interface Collection {
 	name: string;
 	fieldsSchema: IField[];
 }
+
+export type CLASS_CONSTRUCTOR = { new (...args: any[]): {} };
 
 export interface CollectionSchema extends Collection {
 	accessList?: string[];

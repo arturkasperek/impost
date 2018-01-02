@@ -54,7 +54,7 @@ const oneCollectionSettings = {
 	collections: [catCollection]
 };
 
-describe('User', () => {
+describe('UI API User', () => {
 	const server = express();
 	it('should be able to enter on UI route', async () => {
 		await initAppWithSettings(server);

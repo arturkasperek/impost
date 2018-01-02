@@ -5,6 +5,7 @@ import { NestFactory } from '@nestjs/core';
 import {MainModule} from "./modules/Main/MainModule";
 import {ImpostSettings} from "../interfaces/interfaces";
 import ImpostSettingsService from "./ImpostSettingsService";
+import {Repository} from "typeorm";
 
 export default class Impost {
 	// private collections: CollectionSchema[] = [];
@@ -27,6 +28,10 @@ export default class Impost {
 		const app = await NestFactory.create(this.getMainModule());
 
 		return app.listen(3000);
+	}
+
+	public getRepository(): Repository<any> {
+		return null;
 	}
 
 	// validate(collectionToRegister: CollectionSchema) {
